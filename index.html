@@ -12,6 +12,20 @@
 
 <h1>Hello World</h1>
 <canvas id='myCanvas'></canvas>
-
+<script>
+  (function(){
+    var canvas = document.getElementById('myCanvas'),
+    context = canvas.getContext('2d');
+    
+    function drawStuff(){
+      context.beginPath();
+      context.arc(50,50,50,0,2*Math.PI);
+      context.fill();
+    }
+    
+    drawStuff();
+    
+  })
+</script>
 </body>
 </html>
