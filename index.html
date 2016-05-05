@@ -15,14 +15,29 @@
 <script>
   (function(){
     var canvas = document.getElementById('myCanvas'),
-    context = canvas.getContext('2d');
+    pencil = canvas.getContext('2d');
     
     function drawStuff(){
-      context.beginPath();
-      context.arc(100,75,50,0,2*Math.PI);
-      context.fillStyle = '#e6399b';
+      drawCircle();
+      drawLine();
+    }
+    
+    function drawCircle(){
+      pencil.beginPath();
+      pencil.arc(100,75,50,0,2*Math.PI);
+      pencil.fillStyle = '#e6399b';
       
-      context.fill();
+      pencil.fill();
+    }
+    
+    function drawLine(){
+      pencil.beginPath();
+      pencil.moveTo(0,150);
+      pencil.strokeStyle = "#ffffff";
+      pencil.lineWidth = 5;
+      pencil.lineTo(150,150);
+      pencil.stroke();
+      
     }
     
     drawStuff();
